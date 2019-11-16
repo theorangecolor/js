@@ -1,1 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Color Generator 1.0</title>
+     
+    <style>
+    #colorBtn {
+     padding: 200px;
+     margin: 7.1%;
+     margin-left: 28%;
+     border-radius: 1.35%;
+     border: none;
+    }
+    #colorP{
+        font-size: 100px;
+    }
+    #discoverColBtn {
+      
+        background-color: antiquewhite;
+        border: none;
+        border-radius: 1%;
+    }
+    #discoverColP {
+        font-size: 20px;
+    }
+   
+    
+    </style>
+    
+</head>
+<body>
+    <button id="colorBtn">
+      <p id="colorP">Нажми!</p>
+    </button>
 
+    <button id="discoverColBtn">
+        <p id="discoverColP">Нажми, чтобы узнать RGB-код цвета!</p>
+    </button>
+<!-- <a style="color: blue;"></a> -->
+    <script>
+            let colorBtn = document.getElementById('colorBtn')
+            let colorP = document.getElementById('colorP')
+        
+        colorBtn.onclick = function() {
+                colorP.style.color = '#' + (0x1000000 + (Math.random()) *0xffffff)
+                                                                                    .toString(16).substring(1,7);
+                colorBtn.style.backgroundColor = '#' + (0x1000000 + (Math.random()) *0xffffff)
+                                                                                    .toString(16).substring(1,7);
+                console.log(colorBtn.style.backgroundColor);
+                console.log(colorP.style.color);
+                console.log('--------------')
+        }
+        
+        
+        let discoverColBtn = document.getElementById('discoverColBtn');
+        let discoverColP = document.getElementById('discoverColP')
+        
+        discoverColBtn.onclick = function() {
+           
+            // alert('Цвет фона - ' + colorBtn.style.backgroundColor);
+            // alert('Цвет текста - '  +  colorP.style.color);
+            document.write('<p style="margin-top: 2200px; margin: 70px; font-size: 50px; color: ">' + 'Цвет фона - ' + colorBtn.style.backgroundColor + ', ' + 'цвет текста - ' + colorP.style.color + '</p>');
+            
+            // let a = document.createElement('a')
+            // let button = document.createElement('button');
+            // let button2 = document.createElement('button');
+
+            // document.body.append(button)
+                 
+
+            // button.style.padding = '40px'
+            // button.style.color = colorBtn.style.backgroundColor
+            // button.style.border = 'none'
+            // button.style.borderRadius = '1.5%';
+
+            // document.body.append(button2)
+                   
+
+            // button.style.padding = '40px';
+            // button.style.backgroundColor = colorP.style.backgroundColor;
+            // button.style.border = 'none';
+            // button.style.borderRadius = '1.5%';
+            // button.style.margin = '20%'
+            
+
+
+
+        }
+        
+</script>
+
+</body>
+</html>
